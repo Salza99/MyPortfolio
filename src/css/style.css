@@ -30,12 +30,18 @@ body .text-shadow {
   text-shadow: 2px 2px 3px black;
 }
 body .first-paragraph {
-  line-height: 1.8rem;
+  line-height: 2rem;
   animation: show-animation 5s ease alternate;
 }
-body .foto-profilo {
-  overflow: hidden;
-  transform: rotate(20deg);
+body .b-bot {
+  border-bottom: 3px solid white;
+}
+body .competence {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+body .competence p {
+  font-size: 2rem;
 }
 
 @keyframes show-animation {

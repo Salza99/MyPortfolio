@@ -3,6 +3,20 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../myAssets/logoportfolio.svg";
 
 const Topbar = () => {
+  const [showTotalNavbar, setShowTotalNavbar] = useState(true);
+  const windowX = window.innerWidth;
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (windowX < 500) {
+        setShowTotalNavbar(false);
+      } else {
+        setShowTotalNavbar(true);
+      }
+    });
+    return () => {
+      window.removeEventListener("resize", () => {});
+    };
+  }, [windowX]);
   const [isScroll, setIsScroll] = useState(false);
   const scrolled = window.screenY;
   useEffect(() => {
@@ -22,12 +36,14 @@ const Topbar = () => {
     <Navbar className={isScroll ? "border-navbar border-on-scroll" : "border-navbar"} data-bs-theme="dark">
       <Container>
         <Navbar.Brand>Navbar</Navbar.Brand>
-        <Nav>
-          <Nav.Link className="nav-select">Home</Nav.Link>
-          <Nav.Link className="nav-select">Competenze</Nav.Link>
-          <Nav.Link className="nav-select">Progetti</Nav.Link>
-          <Nav.Link className="nav-select">Contatti</Nav.Link>
-        </Nav>
+        {showTotalNavbar && (
+          <Nav>
+            <Nav.Link className="nav-select">Home</Nav.Link>
+            <Nav.Link className="nav-select">Competenze</Nav.Link>
+            <Nav.Link className="nav-select">Progetti</Nav.Link>
+            <Nav.Link className="nav-select">Contatti</Nav.Link>
+          </Nav>
+        )}
       </Container>
     </Navbar>
   );

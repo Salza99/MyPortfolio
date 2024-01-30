@@ -29,12 +29,18 @@ body {
     text-shadow: 2px 2px 3px black;
   }
   .first-paragraph {
-    line-height: 1.8rem;
+    line-height: 2rem;
     animation: show-animation 5s ease alternate;
   }
-  .foto-profilo {
-    overflow: hidden;
-    transform: rotate(20deg);
+  .b-bot {
+    border-bottom: 3px solid white;
+  }
+  .competence {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    p {
+      font-size: 2rem;
+    }
   }
 }
 
