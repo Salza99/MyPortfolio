@@ -1,14 +1,40 @@
-import { Card, Col, Container, Row } from "react-bootstrap";
-import profilePicture from "../myAssets/profilo.jpg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Card, Col, Row } from "react-bootstrap";
 
-const FirstTopPage = () => {
+const FirstTopPage = ({ setPage }) => {
+  const myElementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const handleScroll = () => {
+    const element = myElementRef.current;
+
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+      setIsVisible(isVisible);
+    } else {
+      setIsVisible(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  useEffect(() => {
+    if (isVisible) {
+      setPage("HOME");
+    }
+  }, [isVisible]);
   return (
     <Row>
       <Col className="p-5" xs={12}>
-        <div className=" rounded p-3  ">
+        <div className=" rounded p-3 first-page-anim ">
           <div className="overflow-hidden">
-            <h1 className="text-white mb-5">Junior Full-Stack Web Developer</h1>
+            <h1 ref={myElementRef} className="text-white mb-5">
+              Junior Full-Stack Web Developer
+            </h1>
           </div>
           <Card.Body>
             <Card.Text className="text-white text-shadow first-paragraph">

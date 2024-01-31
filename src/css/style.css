@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 body {
   background-color: rgb(10, 20, 0);
+  scroll-behavior: smooth;
   font-family: "Roboto Mono", monospace;
 }
 body .border-navbar {
@@ -10,8 +11,14 @@ body .border-navbar {
   background-color: rgb(10, 20, 0);
   transition: all 1.5s;
 }
+body .transition {
+  transition: all 0.5s;
+}
 body .border-on-scroll {
   box-shadow: 0 1px 50px 2px lime;
+}
+body .nav-not-select {
+  border-bottom: 1px solid transparent;
 }
 body .nav-select {
   border-bottom: 1px solid white;
@@ -36,14 +43,62 @@ body .first-paragraph {
 body .b-bot {
   border-bottom: 3px solid white;
 }
-body .competence {
-  display: grid;
-  grid-template-columns: auto auto auto;
+@media (prefers-reduced-motion: no-preference) {
+  body .first-page-anim {
+    animation: fade-off linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+  }
+  body .competence-text {
+    scale: 0.8;
+    opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range-start: 100px;
+    animation-range-end: 300px;
+  }
 }
-body .competence p {
+body .scroller {
+  max-width: 800px;
+  outline: 4px solid lime;
+}
+body .scroller .scroller-inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+body .scroller p {
   font-size: 2rem;
 }
+body .scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+body .scroller[data-animated="true"] .scroller-inner {
+  width: fit-content;
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
+}
 
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+@keyframes fade-off {
+  to {
+    scale: 0;
+    opacity: 0;
+  }
+}
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
 @keyframes show-animation {
   0% {
     opacity: 0;
@@ -51,4 +106,4 @@ body .competence p {
   100% {
     opacity: 1;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

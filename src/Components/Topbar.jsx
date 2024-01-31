@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import logo from "../myAssets/logoportfolio.svg";
-
-const Topbar = () => {
+import logo from "../assets/logo.svg";
+const Topbar = ({ page }) => {
   const [showTotalNavbar, setShowTotalNavbar] = useState(true);
   const windowX = window.innerWidth;
   useEffect(() => {
@@ -35,13 +34,23 @@ const Topbar = () => {
   return (
     <Navbar className={isScroll ? "border-navbar border-on-scroll" : "border-navbar"} data-bs-theme="dark">
       <Container>
-        <Navbar.Brand>Navbar</Navbar.Brand>
+        <Navbar.Brand>
+          <img style={{ width: "50px", height: "50px" }} src={logo} alt="my-logo" />
+        </Navbar.Brand>
         {showTotalNavbar && (
           <Nav>
-            <Nav.Link className="nav-select">Home</Nav.Link>
-            <Nav.Link className="nav-select">Competenze</Nav.Link>
-            <Nav.Link className="nav-select">Progetti</Nav.Link>
-            <Nav.Link className="nav-select">Contatti</Nav.Link>
+            <Nav.Link className={page === "HOME" ? "nav-select transition" : "nav-not-select transition"}>
+              Home
+            </Nav.Link>
+            <Nav.Link className={page === "COMPETENCE" ? "nav-select transition" : "nav-not-select transition"}>
+              Competenze
+            </Nav.Link>
+            <Nav.Link className={page === "PROJECT" ? "nav-select transition" : "nav-not-select transition"}>
+              Progetti
+            </Nav.Link>
+            <Nav.Link className={page === "CONTACT" ? "nav-select transition" : "nav-not-select transition"}>
+              Contatti
+            </Nav.Link>
           </Nav>
         )}
       </Container>

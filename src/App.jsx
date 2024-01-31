@@ -4,14 +4,16 @@ import FirstTopPage from "./Components/FirstTopPage";
 import Topbar from "./Components/Topbar";
 import CompetencePage from "./Components/CompetencePage";
 import { Container } from "react-bootstrap";
+import { useState } from "react";
 
 function App() {
+  const [page, setPage] = useState("HOME");
   return (
     <div>
-      <Topbar />
+      <Topbar page={page} />
       <Container>
-        <FirstTopPage />
-        <CompetencePage />
+        <FirstTopPage setPage={setPage} />
+        <CompetencePage setPage={setPage} />
       </Container>
     </div>
   );

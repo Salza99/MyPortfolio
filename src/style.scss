@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
 body {
   background-color: rgb(10, 20, 0);
+  scroll-behavior: smooth;
   font-family: "Roboto Mono", monospace;
   .border-navbar {
     box-shadow: 0 1px 20px 2px lime;
@@ -9,8 +11,14 @@ body {
     background-color: rgb(10, 20, 0);
     transition: all 1.5s;
   }
+  .transition {
+    transition: all 0.5s;
+  }
   .border-on-scroll {
     box-shadow: 0 1px 50px 2px lime;
+  }
+  .nav-not-select {
+    border-bottom: 1px solid transparent;
   }
   .nav-select {
     border-bottom: 1px solid white;
@@ -35,15 +43,68 @@ body {
   .b-bot {
     border-bottom: 3px solid white;
   }
-  .competence {
-    display: grid;
-    grid-template-columns: auto auto auto;
+  @media (prefers-reduced-motion: no-preference) {
+    .first-page-anim {
+      animation: fade-off linear forwards;
+      animation-timeline: view();
+      // animation-range-start: 700px;
+      // animation-range-end: 1500px;
+      animation-range: exit;
+    }
+    .competence-text {
+      scale: 0.8;
+      opacity: 0;
+      animation: fade-in linear forwards;
+      animation-timeline: view();
+      animation-range-start: 100px;
+      animation-range-end: 300px;
+    }
+  }
+
+  .scroller {
+    max-width: 800px;
+    outline: 4px solid lime;
+
+    // overflow: hidden;
+    .scroller-inner {
+      padding-block: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
     p {
       font-size: 2rem;
     }
   }
-}
+  .scroller[data-animated="true"] {
+    overflow: hidden;
 
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    .scroller-inner {
+      width: fit-content;
+      flex-wrap: nowrap;
+      animation: scroll 20s linear infinite;
+    }
+  }
+}
+@keyframes fade-in {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+@keyframes fade-off {
+  to {
+    scale: 0;
+    opacity: 0;
+  }
+}
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
 @keyframes show-animation {
   0% {
     opacity: 0;
