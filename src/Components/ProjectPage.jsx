@@ -30,12 +30,12 @@ const ProjectPage = ({ setPage }) => {
   return (
     <Row className="competence-text">
       <Col className=" p-5" xs={12}>
-        <div ref={myElementRef} className="p-3">
+        <div className="p-3">
           <Card.Header>
-            <h2 className="text-light fw-bold">Benvenuto nella Galleria dei Miei Progetti!</h2>
+            <h2 className="text-light fw-bold font-title mb-5">Benvenuto nella Galleria dei Miei Progetti!</h2>
           </Card.Header>
           <Card.Body>
-            <Card.Text ref={myElementRef} className="text-white text-shadow mb-4">
+            <Card.Text ref={myElementRef} className="text-white text-shadow interlinea mb-4">
               Sono entusiasta di condividere con te alcuni dei progetti su cui ho lavorato con impegno e passione. Anche
               se la collezione è ancora piccola, ogni progetto rappresenta un pezzo del mio percorso di apprendimento
               come sviluppatore. Spero tu possa trovare interessanti queste piccole opere che hanno contribuito a
@@ -45,7 +45,7 @@ const ProjectPage = ({ setPage }) => {
           </Card.Body>
         </div>
       </Col>
-      <Col xs={12} md={4}>
+      <Col className="mb-4" xs={12} md={4}>
         <Card className="h-100">
           <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
           <Card.Body>
@@ -58,8 +58,8 @@ const ProjectPage = ({ setPage }) => {
           </Card.Body>
         </Card>
       </Col>
-      <Col xs={12} md={4}>
-        <Card className="h-100">
+      <Col className="mb-4" xs={12} md={4}>
+        <Card className="h-100 ">
           <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
           <Card.Body>
             <Card.Title>EPIC ENERGY SERVICE</Card.Title>
@@ -70,8 +70,8 @@ const ProjectPage = ({ setPage }) => {
           </Card.Body>
         </Card>
       </Col>
-      <Col xs={12} md={4}>
-        <Card className="h-100">
+      <Col className="mb-4" xs={12} md={4}>
+        <Card className="h-100 ">
           <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
           <Card.Body>
             <Card.Title>Clone di LinkedIn</Card.Title>

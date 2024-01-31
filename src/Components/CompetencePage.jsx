@@ -48,10 +48,10 @@ const CompetencePage = ({ setPage }) => {
       <Col className="p-5 competence-text" xs={12}>
         <div className="p-3 b-bot">
           <Card.Header>
-            <h2 className="text-light fw-bold">Benvenuto nella Sezione delle Mie Competenze!</h2>
+            <h2 className="text-light fw-bold font-title mb-5">Benvenuto nella Sezione delle Mie Competenze!</h2>
           </Card.Header>
           <Card.Body>
-            <Card.Text ref={myElementRef} className="text-white text-shadow mb-4">
+            <Card.Text ref={myElementRef} className="text-white text-shadow mb-4 interlinea">
               Qui potrai esplorare il mio arsenale di competenze nel mondo dello sviluppo web. Da linguaggi di markup e
               stilizzazione come HTML e CSS a potenti framework come React per il frontend e Java Spring per il backend,
               ho investito tempo ed energia per padroneggiare le tecnologie chiave del settore. La mia esperienza spazia
