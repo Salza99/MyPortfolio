@@ -1,21 +1,7 @@
 import { useEffect, useState } from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavbarCollapse } from "react-bootstrap";
 import logo from "../assets/logo.svg";
 const Topbar = ({ page }) => {
-  const [showTotalNavbar, setShowTotalNavbar] = useState(true);
-  const windowX = window.innerWidth;
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      if (windowX < 500) {
-        setShowTotalNavbar(false);
-      } else {
-        setShowTotalNavbar(true);
-      }
-    });
-    return () => {
-      window.removeEventListener("resize", () => {});
-    };
-  }, [windowX]);
   const [isScroll, setIsScroll] = useState(false);
   const scrolled = window.screenY;
   useEffect(() => {
@@ -31,28 +17,53 @@ const Topbar = ({ page }) => {
       setIsScroll(false);
     }, 200);
   };
+  const scrollToSection = (sectionId) => {
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
   return (
-    <Navbar className={isScroll ? "border-navbar border-on-scroll" : "border-navbar"} data-bs-theme="dark">
-      <Container>
+    <Navbar expand="md" className={isScroll ? "border-navbar border-on-scroll" : "border-navbar"} data-bs-theme="dark">
+      <Container fluid>
         <Navbar.Brand>
           <img style={{ width: "50px", height: "50px" }} src={logo} alt="my-logo" />
         </Navbar.Brand>
-        {showTotalNavbar && (
-          <Nav>
-            <Nav.Link className={page === "HOME" ? "nav-select transition" : "nav-not-select transition"}>
-              Home
-            </Nav.Link>
-            <Nav.Link className={page === "COMPETENCE" ? "nav-select transition" : "nav-not-select transition"}>
-              Competenze
-            </Nav.Link>
-            <Nav.Link className={page === "PROJECT" ? "nav-select transition" : "nav-not-select transition"}>
-              Progetti
-            </Nav.Link>
-            <Nav.Link className={page === "CONTACT" ? "nav-select transition" : "nav-not-select transition"}>
-              Contatti
-            </Nav.Link>
-          </Nav>
-        )}
+        <div>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <NavbarCollapse id="navbarScroll">
+            <Nav navbarScroll>
+              <p
+                className={page === "HOME" ? "nav-select transition" : "nav-not-select transition"}
+                onClick={() => scrollToSection("home")}
+              >
+                Home
+              </p>
+              <p
+                className={page === "COMPETENCE" ? "nav-select transition" : "nav-not-select transition"}
+                onClick={() => scrollToSection("competenze")}
+              >
+                Competenze
+              </p>
+              <p
+                className={page === "PROJECT" ? "nav-select transition" : "nav-not-select transition"}
+                onClick={() => scrollToSection("progetti")}
+              >
+                Progetti
+              </p>
+              <p
+                className={page === "CONTACT" ? "nav-select transition" : "nav-not-select transition"}
+                onClick={() => scrollToSection("contatti")}
+              >
+                Contatti
+              </p>
+            </Nav>
+          </NavbarCollapse>
+        </div>
       </Container>
     </Navbar>
   );

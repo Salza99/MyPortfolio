@@ -1,10 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { EnvelopeAt, Github, Linkedin } from "react-bootstrap-icons";
+import { Check2, EnvelopeAt, Github, Linkedin } from "react-bootstrap-icons";
 
 const ContactsPage = ({ setPage }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [tooltip, setTooltip] = useState(false);
+  const [copied, setCopied] = useState(false);
   const myElementRef = useRef(null);
+  const copyText = () => {
+    const textToCopy = document.createElement("textarea");
+    textToCopy.value = "Davidesalzani190@gmail.com";
+    document.body.appendChild(textToCopy);
+    textToCopy.select();
+
+    // Esegui il comando di copia
+    document.execCommand("copy");
+
+    // Rimuovi l'elemento temporaneo
+    document.body.removeChild(textToCopy);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 1000);
+  };
+  const handleToolTip = () => {
+    setTooltip(true);
+  };
+  const handleLeave = () => {
+    setTooltip(false);
+  };
   const handleScroll = () => {
     const element = myElementRef.current;
 
@@ -28,7 +52,7 @@ const ContactsPage = ({ setPage }) => {
   }, [isVisible]);
   return (
     <Row className="competence-text">
-      <Col className="p-5 mb-4" xs={12}>
+      <Col id="contatti" className="p-5 mb-4" xs={12}>
         <div className="p-3 b-bot">
           <Card.Header>
             <h2 className="text-light fw-bold font-title mb-5">Contattami: Parliamo del Futuro</h2>
@@ -51,7 +75,32 @@ const ContactsPage = ({ setPage }) => {
               </Col>
               <Col className="text-light" xs={10}>
                 <Card.Title>Email</Card.Title>
-                <Card.Text>Davidesalzani190@gmail.com</Card.Text>
+                <div className="position-relative">
+                  <Card.Text
+                    style={{ cursor: "pointer" }}
+                    onClick={copyText}
+                    onMouseOver={handleToolTip}
+                    onMouseLeave={handleLeave}
+                  >
+                    Davidesalzani190@gmail.com
+                  </Card.Text>
+                  {tooltip && (
+                    <div
+                      style={{ position: "absolute", right: "0", backgroundColor: "rgba(255, 255, 255, 0.4)" }}
+                      className="border p-2 m-0"
+                    >
+                      <p style={{ fontSize: "0.8rem" }} className="m-0">
+                        {copied ? (
+                          <>
+                            <Check2 /> <span>Copiato</span>
+                          </>
+                        ) : (
+                          "Copia Email"
+                        )}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </Col>
             </Row>
           </Card>
@@ -64,7 +113,16 @@ const ContactsPage = ({ setPage }) => {
               </Col>
               <Col className="text-light" xs={10}>
                 <Card.Title>Github</Card.Title>
-                <Card.Text>https://github.com/Salza99</Card.Text>
+                <Card.Text>
+                  <a
+                    style={{ textDecoration: "none" }}
+                    href="https://github.com/Salza99"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    https://github.com/Salza99
+                  </a>
+                </Card.Text>
               </Col>
             </Row>
           </Card>
@@ -77,7 +135,16 @@ const ContactsPage = ({ setPage }) => {
               </Col>
               <Col className="text-light" xs={10}>
                 <Card.Title>Linkedin</Card.Title>
-                <Card.Text>www.linkedin.com/in/davide-salzaniwebdeveloper</Card.Text>
+                <Card.Text>
+                  <a
+                    style={{ textDecoration: "none" }}
+                    href="https://www.linkedin.com/in/davide-salzaniwebdeveloper"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    www.linkedin.com/in/davide-salzaniwebdeveloper
+                  </a>
+                </Card.Text>
               </Col>
             </Row>
           </Card>

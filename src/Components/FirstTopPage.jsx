@@ -37,7 +37,7 @@ const FirstTopPage = ({ setPage }) => {
             </h1>
           </div>
           <Card.Body>
-            <Card.Text className="text-white text-shadow first-paragraph">
+            <Card.Text className="text-white text-shadow first-paragraph interlinea">
               Benvenuto nel mio mondo digitale! Mi chiamo Davide e sono un Junior Full Stack Web Developer con sede a
               Verona, appassionato di creare soluzioni web innovative. Nel mio portfolio, troverai una selezione di
               progetti significativi che illustrano la mia competenza. Dal design coinvolgente del frontend alla

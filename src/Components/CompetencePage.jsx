@@ -46,7 +46,7 @@ const CompetencePage = ({ setPage }) => {
   return (
     <Row>
       <Col className="p-5 competence-text" xs={12}>
-        <div className="p-3 b-bot">
+        <div id="competenze" className="p-3 b-bot">
           <Card.Header>
             <h2 className="text-light fw-bold font-title mb-5">Benvenuto nella Sezione delle Mie Competenze!</h2>
           </Card.Header>
@@ -63,7 +63,7 @@ const CompetencePage = ({ setPage }) => {
         </div>
         <div className="d-flex justify-content-center">
           <div className="scroller" data-animated={mediaReduce}>
-            <div className="scroller-inner">
+            <div className="scroller-inner justify-content-center">
               <div className="text-center">
                 <img src={htmlIcon} alt="Html-logo" />
                 <p className="text-light">HTML5</p>

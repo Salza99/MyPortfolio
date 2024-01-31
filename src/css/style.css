@@ -25,26 +25,26 @@ body .border-on-scroll {
   box-shadow: 0 1px 50px 2px lime;
 }
 body .nav-not-select {
-  border-bottom: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  margin-right: 0.8rem;
+  cursor: pointer;
 }
 body .nav-select {
-  border-bottom: 1px solid white;
+  color: white;
+  margin: 0;
+  margin-right: 0.8rem;
+  cursor: default;
 }
 body h1 {
-  width: 90%;
   font-size: 5rem;
   font-weight: bold;
   animation: show-animation 5s ease alternate;
-}
-body img {
-  width: 20rem;
-  height: 20rem;
 }
 body .text-shadow {
   text-shadow: 2px 2px 3px black;
 }
 body .first-paragraph {
-  line-height: 2rem;
   animation: show-animation 5s ease alternate;
 }
 body .b-bot {
@@ -65,8 +65,7 @@ body .b-bot {
   }
 }
 body .scroller {
-  max-width: 800px;
-  outline: 4px solid lime;
+  max-width: 1000px;
 }
 body .scroller .scroller-inner {
   padding-block: 1rem;
@@ -74,8 +73,12 @@ body .scroller .scroller-inner {
   flex-wrap: wrap;
   gap: 1rem;
 }
+body .scroller img {
+  width: 100px;
+  height: 100px;
+}
 body .scroller p {
-  font-size: 2rem;
+  font-size: 0.8rem;
 }
 body .scroller[data-animated="true"] {
   overflow: hidden;
@@ -86,6 +89,41 @@ body .scroller[data-animated="true"] .scroller-inner {
   width: fit-content;
   flex-wrap: nowrap;
   animation: scroll 20s linear infinite;
+}
+body .scroller[data-animated="true"] img {
+  width: 15rem;
+  height: 15rem;
+}
+body .scroller[data-animated="true"] p {
+  font-size: 2rem;
+}
+@media screen and (max-width: 450px) {
+  body h1 {
+    font-size: 2.8rem;
+  }
+  body .font-title {
+    font-size: 2rem;
+  }
+  body .interlinea {
+    line-height: 1.5rem;
+  }
+  body p {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 450px) and (max-width: 768px) {
+  body h1 {
+    font-size: 3.8rem;
+  }
+  body .font-title {
+    font-size: 2.9rem;
+  }
+  body .interlinea {
+    line-height: 1.8rem;
+  }
+  body p {
+    font-size: 1rem;
+  }
 }
 
 @keyframes fade-in {

@@ -28,9 +28,9 @@ const ProjectPage = ({ setPage }) => {
     }
   }, [isVisible]);
   return (
-    <Row className="competence-text">
-      <Col className=" p-5" xs={12}>
-        <div className="p-3">
+    <Row id="progetti" className="competence-text">
+      <Col className=" p-5 " xs={12}>
+        <div className="p-3 b-bot">
           <Card.Header>
             <h2 className="text-light fw-bold font-title mb-5">Benvenuto nella Galleria dei Miei Progetti!</h2>
           </Card.Header>
@@ -45,7 +45,7 @@ const ProjectPage = ({ setPage }) => {
           </Card.Body>
         </div>
       </Col>
-      <Col className="mb-4" xs={12} md={4}>
+      <Col className="mb-4" xs={12} lg={4}>
         <Card className="h-100">
           <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
           <Card.Body>
@@ -58,7 +58,7 @@ const ProjectPage = ({ setPage }) => {
           </Card.Body>
         </Card>
       </Col>
-      <Col className="mb-4" xs={12} md={4}>
+      <Col className="mb-4" xs={12} lg={4}>
         <Card className="h-100 ">
           <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
           <Card.Body>
@@ -70,7 +70,7 @@ const ProjectPage = ({ setPage }) => {
           </Card.Body>
         </Card>
       </Col>
-      <Col className="mb-4" xs={12} md={4}>
+      <Col className="mb-4" xs={12} lg={4}>
         <Card className="h-100 ">
           <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
           <Card.Body>
