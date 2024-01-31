@@ -5,6 +5,7 @@ import Topbar from "./Components/Topbar";
 import CompetencePage from "./Components/CompetencePage";
 import { Container } from "react-bootstrap";
 import { useState } from "react";
+import ProjectPage from "./Components/ProjectPage";
 
 function App() {
   const [page, setPage] = useState("HOME");
@@ -14,6 +15,7 @@ function App() {
       <Container>
         <FirstTopPage setPage={setPage} />
         <CompetencePage setPage={setPage} />
+        <ProjectPage setPage={setPage} />
       </Container>
     </div>
   );
