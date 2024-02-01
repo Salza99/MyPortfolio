@@ -51,7 +51,7 @@ const ContactsPage = ({ setPage }) => {
     }
   }, [isVisible]);
   return (
-    <Row className="competence-text">
+    <Row className="competence-text mb-5">
       <Col id="contatti" className="p-5 mb-4" xs={12}>
         <div className="p-3 b-bot">
           <Card.Header>

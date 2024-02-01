@@ -28,7 +28,7 @@ const FirstTopPage = ({ setPage }) => {
     }
   }, [isVisible]);
   return (
-    <Row>
+    <Row className="mb-5">
       <Col className="p-5" xs={12}>
         <div className=" rounded p-3 first-page-anim ">
           <div className="overflow-hidden">

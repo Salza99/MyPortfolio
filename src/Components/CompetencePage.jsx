@@ -44,7 +44,7 @@ const CompetencePage = ({ setPage }) => {
   }, []);
 
   return (
-    <Row>
+    <Row className="mb-5">
       <Col className="p-5 competence-text" xs={12}>
         <div id="competenze" className="p-3 b-bot">
           <Card.Header>

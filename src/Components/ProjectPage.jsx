@@ -28,7 +28,7 @@ const ProjectPage = ({ setPage }) => {
     }
   }, [isVisible]);
   return (
-    <Row id="progetti" className="competence-text">
+    <Row id="progetti" className="competence-text mb-5">
       <Col className=" p-5 " xs={12}>
         <div className="p-3 b-bot">
           <Card.Header>
@@ -46,42 +46,48 @@ const ProjectPage = ({ setPage }) => {
         </div>
       </Col>
       <Col className="mb-4" xs={12} lg={4}>
-        <Card className="h-100">
-          <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
-          <Card.Body>
-            <Card.Title>PropMenageHub</Card.Title>
-            <Card.Text>
-              PropMenageHub è la mia creazione orgogliosa, un gestionale progettato su misura per ottimizzare le
-              operazioni quotidiane di un'agenzia immobiliare. Con un'attenzione particolare all'efficienza e alla
-              facilità d'uso, questo sistema è pensato per semplificare la gestione di proprietà e clienti.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+        <a href="https://github.com/Salza99/PropManageHub" target="_blank" rel="noreferrer">
+          <Card className="card-overlay">
+            <div className="img-position transition"></div>
+            <Card.Body className="position-absolute overlay-on-img transition text-light">
+              <Card.Title>PropMenageHub</Card.Title>
+              <Card.Text>
+                PropMenageHub è la mia creazione orgogliosa, un gestionale progettato su misura per ottimizzare le
+                operazioni quotidiane di un'agenzia immobiliare. Con un'attenzione particolare all'efficienza e alla
+                facilità d'uso, questo sistema è pensato per semplificare la gestione di proprietà e clienti.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </a>
       </Col>
       <Col className="mb-4" xs={12} lg={4}>
-        <Card className="h-100 ">
-          <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
-          <Card.Body>
-            <Card.Title>EPIC ENERGY SERVICE</Card.Title>
-            <Card.Text>
-              Il sistema EPIC ENERGY SERVICE è il risultato di una collaborazione dinamica e sinergica, con il
-              coinvolgimento di talentuosi sviluppatori, inclusi il sottoscritto e i miei stimati colleghi di corso.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+        <a href="https://github.com/Umberto2698/B-Build-week-2" target="_blank" rel="noreferrer">
+          <Card className="card-overlay">
+            <div className="img-position transition"></div>
+            <Card.Body className="position-absolute overlay-on-img transition text-light">
+              <Card.Title>EPIC ENERGY SERVICE</Card.Title>
+              <Card.Text>
+                Il sistema EPIC ENERGY SERVICE è il risultato di una collaborazione dinamica e sinergica, con il
+                coinvolgimento dei miei stimati colleghi di corso.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </a>
       </Col>
       <Col className="mb-4" xs={12} lg={4}>
-        <Card className="h-100 ">
-          <Card.Img variant="top" src={propManage} alt="Prop-menage-hub-login" />
-          <Card.Body>
-            <Card.Title>Clone di LinkedIn</Card.Title>
-            <Card.Text>
-              Il nostro progetto clone di LinkedIn, realizzato attraverso la potente combinazione di React, Redux e
-              React Persist, è un trionfo di ingegnosità collaborativa che offre un'esperienza utente impeccabile nel
-              panorama delle reti professionali.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+        <a href="https://github.com/alessandrofugazza/bw3" target="_blank" rel="noreferrer">
+          <Card className="card-overlay">
+            <div className="img-position transition"></div>
+            <Card.Body className="position-absolute overlay-on-img transition text-light">
+              <Card.Title>Clone di LinkedIn</Card.Title>
+              <Card.Text>
+                Il nostro progetto clone di LinkedIn, realizzato attraverso la potente combinazione di React, Redux e
+                React Persist, è un trionfo di ingegnosità collaborativa che offre un'esperienza utente impeccabile nel
+                panorama delle reti professionali.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </a>
       </Col>
     </Row>
   );

@@ -104,6 +104,35 @@ body {
       font-size: 2rem;
     }
   }
+  .card-overlay {
+    position: relative;
+    height: 500px;
+    z-index: 3;
+    background-color: transparent;
+    .overlay-on-img {
+      font-size: 0.85rem;
+      bottom: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+    .img-position {
+      height: 100%;
+      z-index: 2;
+      background-image: url("../assets/propManageHub.png");
+      background-size: cover;
+      background-position: -150px;
+    }
+  }
+  .card-overlay:hover {
+    .img-position {
+      height: 40%;
+      background-position: 0;
+    }
+    .overlay-on-img {
+      opacity: 1;
+    }
+  }
+
   @media screen and (max-width: 450px) {
     h1 {
       font-size: 2.8rem;

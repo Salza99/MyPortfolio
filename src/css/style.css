@@ -97,6 +97,32 @@ body .scroller[data-animated="true"] img {
 body .scroller[data-animated="true"] p {
   font-size: 2rem;
 }
+body .card-overlay {
+  position: relative;
+  height: 500px;
+  z-index: 3;
+  background-color: transparent;
+}
+body .card-overlay .overlay-on-img {
+  font-size: 0.85rem;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1;
+}
+body .card-overlay .img-position {
+  height: 100%;
+  z-index: 2;
+  background-image: url("../assets/propManageHub.png");
+  background-size: cover;
+  background-position: -150px;
+}
+body .card-overlay:hover .img-position {
+  height: 40%;
+  background-position: 0;
+}
+body .card-overlay:hover .overlay-on-img {
+  opacity: 1;
+}
 @media screen and (max-width: 450px) {
   body h1 {
     font-size: 2.8rem;
