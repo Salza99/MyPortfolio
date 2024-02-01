@@ -37,7 +37,7 @@ body .nav-select {
   cursor: default;
 }
 body h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: bold;
   animation: show-animation 5s ease alternate;
 }
@@ -52,6 +52,7 @@ body .b-bot {
 }
 @media (prefers-reduced-motion: no-preference) {
   body .first-page-anim {
+    scale: 0.85;
     animation: fade-off linear forwards;
     animation-timeline: view();
     animation-range: exit;

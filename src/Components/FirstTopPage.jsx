@@ -31,7 +31,7 @@ const FirstTopPage = ({ setPage }) => {
   return (
     <Row className="mb-5 first-page-anim align-items-center">
       <Col className="p-5" xs={12} lg={6}>
-        <div className=" rounded p-3  ">
+        <div className=" rounded  ">
           <div className="overflow-hidden">
             <h1 ref={myElementRef} className="text-white mb-5">
               Full Stack Developer
