@@ -109,15 +109,23 @@ body .card-overlay .overlay-on-img {
   opacity: 0;
   z-index: 1;
 }
+body .card-overlay .img-background-prop {
+  background-image: url("../assets/propManageHub.png");
+}
+body .card-overlay .img-background-epic {
+  background-image: url("../assets/epic-energy-add-user.png");
+}
+body .card-overlay .img-background-linkedin {
+  background-image: url("../assets/clone-linkedin-profilo.png");
+}
 body .card-overlay .img-position {
   height: 100%;
   z-index: 2;
-  background-image: url("../assets/propManageHub.png");
   background-size: cover;
   background-position: -150px;
 }
 body .card-overlay:hover .img-position {
-  height: 40%;
+  height: 30%;
   background-position: 0;
 }
 body .card-overlay:hover .overlay-on-img {

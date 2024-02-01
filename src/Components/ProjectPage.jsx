@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Button, Card, Col, Row } from "react-bootstrap";
 import propManage from "../assets/propManageHub.png";
+import { Github } from "react-bootstrap-icons";
 const ProjectPage = ({ setPage }) => {
   const myElementRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -46,48 +47,81 @@ const ProjectPage = ({ setPage }) => {
         </div>
       </Col>
       <Col className="mb-4" xs={12} lg={4}>
-        <a href="https://github.com/Salza99/PropManageHub" target="_blank" rel="noreferrer">
-          <Card className="card-overlay">
-            <div className="img-position transition"></div>
-            <Card.Body className="position-absolute overlay-on-img transition text-light">
-              <Card.Title>PropMenageHub</Card.Title>
-              <Card.Text>
-                PropMenageHub è la mia creazione orgogliosa, un gestionale progettato su misura per ottimizzare le
-                operazioni quotidiane di un'agenzia immobiliare. Con un'attenzione particolare all'efficienza e alla
-                facilità d'uso, questo sistema è pensato per semplificare la gestione di proprietà e clienti.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </a>
+        <Card className="card-overlay">
+          <div className="img-background-prop img-position transition"></div>
+          <Card.Body className="position-absolute overlay-on-img transition text-light">
+            <Card.Title>PropMenageHub</Card.Title>
+            <Card.Text>
+              PropMenageHub è la mia creazione orgogliosa, un gestionale progettato su misura per ottimizzare le
+              operazioni quotidiane di un'agenzia immobiliare. Con un'attenzione particolare all'efficienza e alla
+              facilità d'uso, questo sistema è pensato per semplificare la gestione di proprietà e clienti.
+            </Card.Text>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://github.com/Salza99/PropManageHub"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="d-flex justify-content-center align-items-center border p-1">
+                <Card.Title style={{ fontSize: "1rem" }} className="m-0">
+                  {" "}
+                  <Github style={{ marginBottom: "1px" }} fontSize={"1rem"} /> Vedi su Github
+                </Card.Title>
+              </div>
+            </a>
+          </Card.Body>
+        </Card>
       </Col>
       <Col className="mb-4" xs={12} lg={4}>
-        <a href="https://github.com/Umberto2698/B-Build-week-2" target="_blank" rel="noreferrer">
-          <Card className="card-overlay">
-            <div className="img-position transition"></div>
-            <Card.Body className="position-absolute overlay-on-img transition text-light">
-              <Card.Title>EPIC ENERGY SERVICE</Card.Title>
-              <Card.Text>
-                Il sistema EPIC ENERGY SERVICE è il risultato di una collaborazione dinamica e sinergica, con il
-                coinvolgimento dei miei stimati colleghi di corso.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </a>
+        <Card className="card-overlay">
+          <div className="img-background-epic img-position transition"></div>
+          <Card.Body className="position-absolute overlay-on-img transition text-light">
+            <Card.Title>EPIC ENERGY SERVICE</Card.Title>
+            <Card.Text>
+              Il sistema EPIC ENERGY SERVICE è il risultato di una collaborazione dinamica e sinergica, con il
+              coinvolgimento dei miei stimati colleghi di corso.
+            </Card.Text>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://github.com/Umberto2698/B-Build-week-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="d-flex justify-content-center align-items-center border p-1">
+                <Card.Title style={{ fontSize: "1rem" }} className="m-0">
+                  {" "}
+                  <Github style={{ marginBottom: "1px" }} fontSize={"1rem"} /> Vedi su Github
+                </Card.Title>
+              </div>
+            </a>
+          </Card.Body>
+        </Card>
       </Col>
       <Col className="mb-4" xs={12} lg={4}>
-        <a href="https://github.com/alessandrofugazza/bw3" target="_blank" rel="noreferrer">
-          <Card className="card-overlay">
-            <div className="img-position transition"></div>
-            <Card.Body className="position-absolute overlay-on-img transition text-light">
-              <Card.Title>Clone di LinkedIn</Card.Title>
-              <Card.Text>
-                Il nostro progetto clone di LinkedIn, realizzato attraverso la potente combinazione di React, Redux e
-                React Persist, è un trionfo di ingegnosità collaborativa che offre un'esperienza utente impeccabile nel
-                panorama delle reti professionali.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </a>
+        <Card className="card-overlay">
+          <div className="img-background-linkedin img-position transition"></div>
+          <Card.Body className="position-absolute overlay-on-img transition text-light">
+            <Card.Title>Clone di LinkedIn</Card.Title>
+            <Card.Text>
+              Il nostro progetto clone di LinkedIn, realizzato attraverso la potente combinazione di React, Redux e
+              React Persist, è un trionfo di ingegnosità collaborativa che offre un'esperienza utente impeccabile nel
+              panorama delle reti professionali.
+            </Card.Text>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://github.com/alessandrofugazza/bw3"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="d-flex justify-content-center align-items-center border p-1">
+                <Card.Title style={{ fontSize: "1rem" }} className="m-0">
+                  {" "}
+                  <Github style={{ marginBottom: "1px" }} fontSize={"1rem"} /> Vedi su Github
+                </Card.Title>
+              </div>
+            </a>
+          </Card.Body>
+        </Card>
       </Col>
     </Row>
   );
