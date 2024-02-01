@@ -28,7 +28,7 @@ const Topbar = ({ page }) => {
     }
   };
   return (
-    <Navbar expand="md" className={isScroll ? "border-navbar border-on-scroll" : "border-navbar"} data-bs-theme="dark">
+    <Navbar className={isScroll ? "border-navbar border-on-scroll" : "border-navbar"} data-bs-theme="dark">
       <Container fluid>
         <Navbar.Brand>
           <img style={{ width: "50px", height: "50px" }} src={logo} alt="my-logo" />
