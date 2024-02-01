@@ -51,7 +51,7 @@ const ContactsPage = ({ setPage }) => {
     }
   }, [isVisible]);
   return (
-    <Row className="competence-text mb-5">
+    <Row className="competence-text mb-5 justify-content-center">
       <Col id="contatti" className="p-5 mb-4" xs={12}>
         <div className="p-3 b-bot">
           <Card.Header>
@@ -67,11 +67,11 @@ const ContactsPage = ({ setPage }) => {
         </div>
       </Col>
       <Row className="text-center">
-        <Col className="mb-4" xs={12} md={4}>
+        <Col className="mb-4" xs={12} md={6} lg={4}>
           <Card style={{ border: "none", backgroundColor: "transparent", marginBottom: "5rem" }}>
             <Row>
               <Col className="text-light" xs={2}>
-                <EnvelopeAt style={{ fontSize: "3rem" }} />
+                <EnvelopeAt style={{ fontSize: "2.5rem" }} />
               </Col>
               <Col className="text-light" xs={10}>
                 <Card.Title>Email</Card.Title>
@@ -105,11 +105,11 @@ const ContactsPage = ({ setPage }) => {
             </Row>
           </Card>
         </Col>
-        <Col className="mb-4" xs={12} md={4}>
+        <Col className="mb-4" xs={12} md={6} lg={4}>
           <Card style={{ border: "none", backgroundColor: "transparent", marginBottom: "5rem" }}>
             <Row>
               <Col className="text-light" xs={2}>
-                <Github style={{ fontSize: "3rem" }} />
+                <Github style={{ fontSize: "2.5rem" }} />
               </Col>
               <Col className="text-light" xs={10}>
                 <Card.Title>Github</Card.Title>
@@ -127,11 +127,11 @@ const ContactsPage = ({ setPage }) => {
             </Row>
           </Card>
         </Col>
-        <Col className="mb-4" xs={12} md={4}>
+        <Col className="mb-4" xs={12} lg={4}>
           <Card style={{ border: "none", backgroundColor: "transparent", marginBottom: "5rem" }}>
             <Row>
               <Col className="text-light" xs={2}>
-                <Linkedin style={{ fontSize: "3rem" }} />
+                <Linkedin style={{ fontSize: "2.5rem" }} />
               </Col>
               <Col className="text-light" xs={10}>
                 <Card.Title>Linkedin</Card.Title>

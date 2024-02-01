@@ -110,7 +110,7 @@ body .card-overlay .overlay-on-img {
   z-index: 1;
 }
 body .card-overlay .img-background-prop {
-  background-image: url("../assets/propManageHub.png");
+  background-image: url("../assets/prop-form-cliente.png");
 }
 body .card-overlay .img-background-epic {
   background-image: url("../assets/epic-energy-add-user.png");

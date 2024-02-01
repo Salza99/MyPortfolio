@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
-import propManage from "../assets/propManageHub.png";
+import { Card, Col, Row } from "react-bootstrap";
 import { Github } from "react-bootstrap-icons";
 const ProjectPage = ({ setPage }) => {
   const myElementRef = useRef(null);
