@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
 .light-mode {
-  background-color: rgb(216, 255, 177);
+  background-color: rgb(255, 216, 162);
   .border-navbar {
-    box-shadow: 0 1px 20px 2px green;
+    box-shadow: 0 1px 20px 2px rgb(255, 149, 0);
     position: sticky;
     top: 0;
     z-index: 2;
-    background-color: rgb(216, 255, 177);
+    background-color: rgb(255, 216, 162);
     transition: box-shadow 1.5s ease, background-color 0.5s ease;
   }
   .border-on-scroll {
-    box-shadow: 0 1px 50px 2px green;
+    box-shadow: 0 1px 50px 2px rgb(255, 149, 0);
   }
   .nav-not-select {
     color: rgba(0, 0, 0, 0.5);
@@ -29,19 +29,19 @@
     color: rgba(0, 0, 0, 0.6);
   }
   .text-shadow {
-    text-shadow: 2px 2px 3px rgb(216, 255, 189);
+    text-shadow: 2px 2px 3px rgb(255, 192, 97);
   }
   .image-portrait {
-    box-shadow: 1px 1px 20px 1px green;
-    background-color: rgb(117, 142, 92);
+    box-shadow: 0px 0px 0px 0px white;
+    background-color: rgb(255, 193, 107);
   }
   .cv-button {
     padding: 1rem 1.5rem;
     border: none;
     border-radius: 15px;
     background-color: transparent;
-    color: green;
-    box-shadow: 0px 0px 10px 2px green;
+    color: black;
+    box-shadow: 0px 0px 10px 2px rgb(255, 149, 0);
   }
   .cv-button:hover {
     animation: cv-button-anim 0.5s linear infinite alternate;
