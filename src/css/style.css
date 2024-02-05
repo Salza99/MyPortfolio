@@ -41,7 +41,7 @@
   border-radius: 15px;
   background-color: transparent;
   color: black;
-  box-shadow: 0px 0px 10px 2px rgb(255, 149, 0);
+  box-shadow: 0px 0px 10px 2px #663300;
 }
 .light-mode .cv-button:hover {
   animation: cv-button-anim 0.5s linear infinite alternate;
@@ -59,8 +59,8 @@
   border-radius: 15px;
   background-color: transparent;
   border: none;
-  color: red;
-  box-shadow: 0px 0px 10px 2px red;
+  color: black;
+  box-shadow: 0px 0px 10px 2px #ff0000;
   cursor: not-allowed;
 }
 
