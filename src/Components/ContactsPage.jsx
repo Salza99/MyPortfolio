@@ -3,7 +3,7 @@ import { Card, Col, FloatingLabel, Form, Row, Spinner } from "react-bootstrap";
 import { Check2, EnvelopeAt, Github, Linkedin } from "react-bootstrap-icons";
 import emailjs from "emailjs-com";
 
-const ContactsPage = ({ setPage }) => {
+const ContactsPage = ({ setPage, light }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [tooltip, setTooltip] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -86,14 +86,18 @@ const ContactsPage = ({ setPage }) => {
     }
   }, [isVisible]);
   return (
-    <Row className="competence-text mb-5 justify-content-center">
+    <Row
+      className={
+        light ? "competence-text mb-5 justify-content-center text-light" : "competence-text mb-5 justify-content-center"
+      }
+    >
       <Col id="contatti" className="p-5 mb-4" xs={12}>
         <div className="p-3 b-bot">
           <Card.Header>
-            <h2 className="text-light fw-bold font-title mb-5">Contattami: Parliamo del Futuro</h2>
+            <h2 className="transition fw-bold font-title mb-5">Contattami: Parliamo del Futuro</h2>
           </Card.Header>
           <Card.Body>
-            <Card.Text ref={myElementRef} className="text-white text-shadow mb-4 interlinea">
+            <Card.Text ref={myElementRef} className="transition text-shadow mb-4 interlinea">
               Benvenuto nella mia area contatti, un luogo dedicato alle connessioni e alle opportunità. Se hai domande,
               progetti da discutere o semplicemente desideri scambiare idee, sono qui per te. Troviamoci nel mondo
               digitale o organizziamo una chiacchierata informale.
@@ -101,11 +105,11 @@ const ContactsPage = ({ setPage }) => {
           </Card.Body>
         </div>
       </Col>
-      <Col className="mb-4" xs={12}>
-        <Form className="mb-5 text-light" onSubmit={handleSubmit} id="form-to-send">
-          <h3 className="mb-3 fw-bold">Scrivimi qui</h3>
+      <Col className="mb-4 p-5" xs={12}>
+        <Form className="mb-5  p-3" onSubmit={handleSubmit} id="form-to-send">
+          <h3 className="mb-3 fw-bold transition">Scrivimi qui</h3>
           <Form.Group className="mb-2">
-            <Form.Label>Email</Form.Label>
+            <Form.Label className="transition">Email</Form.Label>
             <Form.Control
               type="email"
               value={email}
@@ -116,7 +120,7 @@ const ContactsPage = ({ setPage }) => {
             />
           </Form.Group>
           <Form.Group className="mb-5">
-            <Form.Label>Nome</Form.Label>
+            <Form.Label className="transition">Nome</Form.Label>
             <Form.Control
               type="text"
               value={name}
@@ -127,7 +131,7 @@ const ContactsPage = ({ setPage }) => {
             />
           </Form.Group>
 
-          <FloatingLabel className="mb-4 text-dark" label="Scrivimi qui">
+          <FloatingLabel className="mb-4 text-dark transition" label="Scrivimi qui">
             <Form.Control
               as="textarea"
               value={content}
@@ -158,21 +162,21 @@ const ContactsPage = ({ setPage }) => {
       <Row className="text-center">
         <Col className="mb-4" xs={12} md={6} lg={4}>
           <Card style={{ border: "none", backgroundColor: "transparent", marginBottom: "5rem" }}>
-            <Row>
-              <Col className="text-light" xs={2}>
+            <Row className={light && "text-light"}>
+              <Col className="transition" xs={2}>
                 <EnvelopeAt style={{ fontSize: "2.5rem" }} />
               </Col>
-              <Col className="text-light" xs={10}>
-                <Card.Title>Email</Card.Title>
+              <Col xs={10}>
+                <h5 className="transition">Email</h5>
                 <div className="position-relative">
-                  <Card.Text
+                  <p
                     style={{ cursor: "pointer" }}
                     onClick={copyText}
                     onMouseOver={handleToolTip}
                     onMouseLeave={handleLeave}
                   >
                     Davidesalzani190@gmail.com
-                  </Card.Text>
+                  </p>
                   {tooltip && (
                     <div
                       style={{ position: "absolute", right: "0", backgroundColor: "rgba(255, 255, 255, 0.4)" }}
@@ -196,13 +200,13 @@ const ContactsPage = ({ setPage }) => {
         </Col>
         <Col className="mb-4" xs={12} md={6} lg={4}>
           <Card style={{ border: "none", backgroundColor: "transparent", marginBottom: "5rem" }}>
-            <Row>
-              <Col className="text-light" xs={2}>
+            <Row className={light && "text-light"}>
+              <Col className="transition" xs={2}>
                 <Github style={{ fontSize: "2.5rem" }} />
               </Col>
-              <Col className="text-light" xs={10}>
-                <Card.Title>Github</Card.Title>
-                <Card.Text>
+              <Col className="transition" xs={10}>
+                <Card.Title className="transition">Github</Card.Title>
+                <Card.Text className="transition">
                   <a
                     style={{ textDecoration: "none" }}
                     href="https://github.com/Salza99"
@@ -218,13 +222,13 @@ const ContactsPage = ({ setPage }) => {
         </Col>
         <Col className="mb-4" xs={12} lg={4}>
           <Card style={{ border: "none", backgroundColor: "transparent", marginBottom: "5rem" }}>
-            <Row>
-              <Col className="text-light" xs={2}>
+            <Row className={light && "text-light"}>
+              <Col className="transition" xs={2}>
                 <Linkedin style={{ fontSize: "2.5rem" }} />
               </Col>
-              <Col className="text-light" xs={10}>
-                <Card.Title>Linkedin</Card.Title>
-                <Card.Text>
+              <Col className="transition" xs={10}>
+                <Card.Title className="transition">Linkedin</Card.Title>
+                <Card.Text className="transition">
                   <a
                     style={{ textDecoration: "none" }}
                     href="https://www.linkedin.com/in/davide-salzaniwebdeveloper"

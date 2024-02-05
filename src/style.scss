@@ -1,10 +1,113 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
 
+.light-mode {
+  background-color: rgb(216, 255, 177);
+  .border-navbar {
+    box-shadow: 0 1px 20px 2px green;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: rgb(216, 255, 177);
+    transition: box-shadow 1.5s ease, background-color 0.5s ease;
+  }
+  .border-on-scroll {
+    box-shadow: 0 1px 50px 2px green;
+  }
+  .nav-not-select {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+    margin-right: 0.8rem;
+    cursor: pointer;
+  }
+  .nav-select {
+    color: black;
+    margin: 0;
+    margin-right: 0.8rem;
+    cursor: default;
+  }
+  .subtitle-color {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  .text-shadow {
+    text-shadow: 2px 2px 3px rgb(216, 255, 189);
+  }
+  .image-portrait {
+    box-shadow: 1px 1px 20px 1px green;
+    background-color: rgb(117, 142, 92);
+  }
+  .cv-button {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 15px;
+    background-color: transparent;
+    color: green;
+    box-shadow: 0px 0px 10px 2px green;
+  }
+  .cv-button:hover {
+    animation: cv-button-anim 0.5s linear infinite alternate;
+  }
+  .form-button {
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    background-color: transparent;
+    border: none;
+    color: green;
+    box-shadow: 0px 0px 10px 2px green;
+  }
+  .button-disabled {
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    background-color: transparent;
+    border: none;
+    color: red;
+    box-shadow: 0px 0px 10px 2px red;
+    cursor: not-allowed;
+  }
+}
+
 body {
+  transition: all 0.5s ease;
   background-color: rgb(10, 20, 0);
   scroll-behavior: smooth;
   font-family: "Roboto Mono", monospace;
+  .toggle-button {
+    display: flex;
+    border-radius: 50px;
+    padding: 0.5rem 1.1rem;
+    position: fixed;
+    z-index: 2;
+    top: 100px;
+    right: 10px;
+  }
+  .toggle-light {
+    background-color: #845e00;
+    border: none;
+  }
+  .toggle-dark {
+    background-color: #003a53;
+    border: none;
+  }
+  .bg-toggle-dark {
+    background-color: #21aae6;
+    width: 25px;
+    height: 25px;
 
+    border-radius: 100%;
+  }
+  .bg-toggle-light {
+    background-color: #edb93a;
+    width: 25px;
+    height: 25px;
+
+    border-radius: 100%;
+  }
+  .image-portrait {
+    box-shadow: 1px 1px 20px 1px lime;
+    background-color: rgb(30, 40, 0);
+  }
+  .subtitle-color {
+    color: rgba(255, 255, 255, 0.6);
+  }
   .font-title {
     font-size: 3.5rem;
   }
@@ -17,7 +120,7 @@ body {
     top: 0;
     z-index: 2;
     background-color: rgb(10, 20, 0);
-    transition: all 1.5s;
+    transition: box-shadow 1.5s ease, background-color 0.5s ease;
   }
   .transition {
     transition: all 0.5s;
@@ -112,6 +215,9 @@ body {
     color: lime;
     box-shadow: 0px 0px 10px 2px lime;
   }
+  .cv-button:hover {
+    animation: cv-button-anim 0.5s linear infinite alternate;
+  }
   .form-button {
     padding: 1rem 1.5rem;
     border-radius: 15px;
@@ -133,9 +239,7 @@ body {
     box-shadow: 0px 0px 10px 2px red;
     cursor: not-allowed;
   }
-  .cv-button:hover {
-    animation: cv-button-anim 0.5s linear infinite alternate;
-  }
+
   .card-overlay {
     position: relative;
     height: 500px;

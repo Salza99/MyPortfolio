@@ -11,7 +11,7 @@ import mySqlIcon from "../assets/mysql-icon.svg";
 import { useEffect, useRef, useState } from "react";
 import cv from "../assets/CvRenewed.pdf";
 
-const CompetencePage = ({ setPage }) => {
+const CompetencePage = ({ setPage, light }) => {
   const [mediaReduce, setMediaReduce] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const myElementRef = useRef(null);
@@ -45,14 +45,14 @@ const CompetencePage = ({ setPage }) => {
   }, []);
 
   return (
-    <Row className="mb-5">
+    <Row className={light ? "mb-5 text-light" : "mb-5"}>
       <Col className="p-5 competence-text" xs={12}>
-        <div id="competenze" className="p-3 b-bot">
+        <div id="competenze" className="p-3 b-bot ">
           <Card.Header>
-            <h2 className="text-light fw-bold font-title mb-5">Benvenuto nella Sezione delle Mie Competenze!</h2>
+            <h2 className=" fw-bold font-title mb-5 transition">Benvenuto nella Sezione delle Mie Competenze!</h2>
           </Card.Header>
           <Card.Body>
-            <Card.Text ref={myElementRef} className="text-white text-shadow mb-4 interlinea">
+            <Card.Text ref={myElementRef} className=" text-shadow mb-4 interlinea transition">
               Qui potrai esplorare il mio arsenale di competenze nel mondo dello sviluppo web. Da linguaggi di markup e
               stilizzazione come HTML e CSS a potenti framework come React per il frontend e Java Spring per il backend,
               ho investito tempo ed energia per padroneggiare le tecnologie chiave del settore. La mia esperienza spazia
@@ -67,77 +67,77 @@ const CompetencePage = ({ setPage }) => {
             <div className="scroller-inner justify-content-center">
               <div className="text-center mb-3">
                 <img src={htmlIcon} alt="Html-logo" />
-                <p className="text-light">HTML5</p>
+                <p className="transition">HTML5</p>
               </div>
               <div className="text-center">
                 <img src={cssIcon} alt="Css-logo" />
-                <p className="text-light">CSS3</p>
+                <p className="transition">CSS3</p>
               </div>
               <div className="text-center">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png"
                   alt="Javascript-logo"
                 />
-                <p className="text-light">JAVASCRIPT</p>
+                <p className="transition">JAVASCRIPT</p>
               </div>
               <div className="text-center">
-                <img src={bootstrapIcon} alt="Bootstrap-logo" /> <p className="text-light">BOOTSTRAP</p>{" "}
+                <img src={bootstrapIcon} alt="Bootstrap-logo" /> <p className="transition">BOOTSTRAP</p>{" "}
               </div>
               <div className="text-center">
-                <img src={sassIcon} alt="Sass-logo" /> <p className="text-light">SASS/SCSS</p>{" "}
+                <img src={sassIcon} alt="Sass-logo" /> <p className="transition">SASS/SCSS</p>{" "}
               </div>
               <div className="text-center">
-                <img src={reactIcon} alt="React-logo" /> <p className="text-light">REACT</p>{" "}
+                <img src={reactIcon} alt="React-logo" /> <p className="transition">REACT</p>{" "}
               </div>
               <div className="text-center">
-                <img src={javaIcon} alt="Java-logo" /> <p className="text-light">JAVA</p>{" "}
+                <img src={javaIcon} alt="Java-logo" /> <p className="transition">JAVA</p>{" "}
               </div>
               <div className="text-center">
-                <img src={springIcon} alt="Spring-logo" /> <p className="text-light">SPRINGBOOT</p>{" "}
+                <img src={springIcon} alt="Spring-logo" /> <p className="transition">SPRINGBOOT</p>{" "}
               </div>
               <div className="text-center">
-                <img src={postgresIcon} alt="PostgreSQL-logo" /> <p className="text-light">POSTGRESQL</p>{" "}
+                <img src={postgresIcon} alt="PostgreSQL-logo" /> <p className="transition">POSTGRESQL</p>{" "}
               </div>
               <div className="text-center">
-                <img src={mySqlIcon} alt="MySQL-logo" /> <p className="text-light">MYSQL</p>{" "}
+                <img src={mySqlIcon} alt="MySQL-logo" /> <p className="transition">MYSQL</p>{" "}
               </div>
               {mediaReduce && (
                 <>
                   <div className="text-center">
                     <img src={htmlIcon} alt="Html-logo" />
-                    <p className="text-light">HTML5</p>
+                    <p className="transition">HTML5</p>
                   </div>
                   <div className="text-center">
                     <img src={cssIcon} alt="Css-logo" />
-                    <p className="text-light">CSS3</p>
+                    <p className="transition">CSS3</p>
                   </div>
                   <div className="text-center">
                     <img
                       src="https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png"
                       alt="Javascript-logo"
                     />
-                    <p className="text-light">JAVASCRIPT</p>
+                    <p className="transition">JAVASCRIPT</p>
                   </div>
                   <div className="text-center">
-                    <img src={bootstrapIcon} alt="Bootstrap-logo" /> <p className="text-light">BOOTSTRAP</p>{" "}
+                    <img src={bootstrapIcon} alt="Bootstrap-logo" /> <p className="transition">BOOTSTRAP</p>{" "}
                   </div>
                   <div className="text-center">
-                    <img src={sassIcon} alt="Sass-logo" /> <p className="text-light">SASS/SCSS</p>{" "}
+                    <img src={sassIcon} alt="Sass-logo" /> <p className="transition">SASS/SCSS</p>{" "}
                   </div>
                   <div className="text-center">
-                    <img src={reactIcon} alt="React-logo" /> <p className="text-light">REACT</p>{" "}
+                    <img src={reactIcon} alt="React-logo" /> <p className="transition">REACT</p>{" "}
                   </div>
                   <div className="text-center">
-                    <img src={javaIcon} alt="Java-logo" /> <p className="text-light">JAVA</p>{" "}
+                    <img src={javaIcon} alt="Java-logo" /> <p className="transition">JAVA</p>{" "}
                   </div>
                   <div className="text-center">
-                    <img src={springIcon} alt="Spring-logo" /> <p className="text-light">SPRINGBOOT</p>{" "}
+                    <img src={springIcon} alt="Spring-logo" /> <p className="transition">SPRINGBOOT</p>{" "}
                   </div>
                   <div className="text-center">
-                    <img src={postgresIcon} alt="PostgreSQL-logo" /> <p className="text-light">POSTGRESQL</p>{" "}
+                    <img src={postgresIcon} alt="PostgreSQL-logo" /> <p className="transition">POSTGRESQL</p>{" "}
                   </div>
                   <div className="text-center">
-                    <img src={mySqlIcon} alt="MySQL-logo" /> <p className="text-light">MYSQL</p>{" "}
+                    <img src={mySqlIcon} alt="MySQL-logo" /> <p className="transition">MYSQL</p>{" "}
                   </div>
                 </>
               )}
@@ -146,7 +146,7 @@ const CompetencePage = ({ setPage }) => {
         </div>
         <div className="text-center">
           <a href={cv} download={"CvDavideSalzani"}>
-            <button className="cv-button">Scarica cv</button>
+            <button className="cv-button transition">Scarica cv</button>
           </a>
         </div>
       </Col>
