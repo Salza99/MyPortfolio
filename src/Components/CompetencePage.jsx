@@ -9,6 +9,7 @@ import springIcon from "../assets/spring-icon.svg";
 import postgresIcon from "../assets/postgreSql-icon.svg";
 import mySqlIcon from "../assets/mysql-icon.svg";
 import { useEffect, useRef, useState } from "react";
+import cv from "../assets/CvRenewed.pdf";
 
 const CompetencePage = ({ setPage }) => {
   const [mediaReduce, setMediaReduce] = useState(false);
@@ -64,7 +65,7 @@ const CompetencePage = ({ setPage }) => {
         <div className="d-flex justify-content-center">
           <div className="scroller" data-animated={mediaReduce}>
             <div className="scroller-inner justify-content-center">
-              <div className="text-center">
+              <div className="text-center mb-3">
                 <img src={htmlIcon} alt="Html-logo" />
                 <p className="text-light">HTML5</p>
               </div>
@@ -142,6 +143,11 @@ const CompetencePage = ({ setPage }) => {
               )}
             </div>
           </div>
+        </div>
+        <div className="text-center">
+          <a href={cv} download={"CvDavideSalzani"}>
+            <button className="cv-button">Scarica cv</button>
+          </a>
         </div>
       </Col>
     </Row>
