@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Nav, Navbar, NavbarCollapse } from "react-bootstrap";
 import logo from "../assets/logo.svg";
-const Topbar = ({ page }) => {
+const Topbar = ({ page, lang }) => {
   const [isScroll, setIsScroll] = useState(false);
   const scrolled = window.screenY;
   useEffect(() => {
@@ -47,19 +47,19 @@ const Topbar = ({ page }) => {
                 className={page === "COMPETENCE" ? "nav-select transition" : "nav-not-select transition"}
                 onClick={() => scrollToSection("competenze")}
               >
-                Competenze
+                {lang === "IT" ? "Competenze" : "Skills"}
               </p>
               <p
                 className={page === "PROJECT" ? "nav-select transition" : "nav-not-select transition"}
                 onClick={() => scrollToSection("progetti")}
               >
-                Progetti
+                {lang === "IT" ? "Progetti" : "Projects"}
               </p>
               <p
                 className={page === "CONTACT" ? "nav-select transition" : "nav-not-select transition"}
                 onClick={() => scrollToSection("contatti")}
               >
-                Contatti
+                {lang === "IT" ? "Contatti" : "Contacts"}
               </p>
             </Nav>
           </NavbarCollapse>

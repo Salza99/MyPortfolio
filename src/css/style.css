@@ -70,6 +70,18 @@ body {
   scroll-behavior: smooth;
   font-family: "Roboto Mono", monospace;
 }
+body .hidden {
+  opacity: 0;
+}
+body .language-button {
+  display: flex;
+  border-radius: 50px;
+  padding: 0.5rem 1.1rem;
+  position: fixed;
+  z-index: 2;
+  top: 150px;
+  right: 10px;
+}
 body .toggle-button {
   display: flex;
   border-radius: 50px;
@@ -221,7 +233,7 @@ body .form-button:hover {
   transform: scale(1.1);
 }
 body .transition-color {
-  transition: color 1.5s ease, box-shadow 1.5s ease, transform 0.3s ease;
+  transition: color 1.5s ease, box-shadow 1.5s ease, transform 0.3s ease, opacity 0.5s ease;
 }
 body .button-disabled {
   padding: 1rem 1.5rem;
