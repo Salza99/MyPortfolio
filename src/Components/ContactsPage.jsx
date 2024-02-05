@@ -1,12 +1,46 @@
 import { useEffect, useRef, useState } from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, FloatingLabel, Form, Row, Spinner } from "react-bootstrap";
 import { Check2, EnvelopeAt, Github, Linkedin } from "react-bootstrap-icons";
-
+import emailjs from "emailjs-com";
 const ContactsPage = ({ setPage }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [tooltip, setTooltip] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
+  const [name, setName] = useState("");
+  const [isPending, setIsPending] = useState(false);
   const myElementRef = useRef(null);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setIsPending(true);
+    const templateParams = {
+      from_email: email, // L'email del mittente
+      user_email: email,
+      from_name: name,
+      to_name: "Davide", // Il nome del destinatario (opzionale)
+      message: content, // Il testo del messaggio
+    };
+
+    emailjs.send("", "", templateParams, "").then(
+      (response) => {
+        setIsPending(false);
+        alert("Email inviata con successo!");
+        console.log("SUCCESS!", response.status, response.text);
+        setEmail("");
+        setContent("");
+        setName("");
+      },
+      (error) => {
+        setIsPending(false);
+        console.error("Errore durante l'invio dell'email:", error);
+        alert("Si è verificato un errore durante l'invio dell'email.");
+        setEmail("");
+        setContent("");
+        setName("");
+      }
+    );
+  };
   const copyText = () => {
     const textToCopy = document.createElement("textarea");
     textToCopy.value = "Davidesalzani190@gmail.com";
@@ -65,6 +99,60 @@ const ContactsPage = ({ setPage }) => {
             </Card.Text>
           </Card.Body>
         </div>
+      </Col>
+      <Col className="mb-4" xs={12}>
+        <Form className="mb-5 text-light" onSubmit={handleSubmit} id="form-to-send">
+          <h3 className="mb-3 fw-bold">Scrivimi qui</h3>
+          <Form.Group className="mb-2">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              type="email"
+              value={email}
+              placeholder="Inserisci email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+            />
+          </Form.Group>
+          <Form.Group className="mb-5">
+            <Form.Label>Nome</Form.Label>
+            <Form.Control
+              type="text"
+              value={name}
+              placeholder="Inserisci il tuo nome"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+          </Form.Group>
+
+          <FloatingLabel className="mb-4 text-dark" label="Scrivimi qui">
+            <Form.Control
+              as="textarea"
+              value={content}
+              placeholder="Scrivimi qui"
+              style={{ height: "100px" }}
+              onChange={(e) => {
+                setContent(e.target.value);
+              }}
+            />
+          </FloatingLabel>
+
+          <div className="d-flex justify-content-center">
+            <button
+              className={
+                content === "" || email === "" || name === ""
+                  ? "button-disabled d-flex align-items-center justify-content-center transition-color"
+                  : "form-button d-flex align-items-center justify-content-center transition-color"
+              }
+              type="submit"
+              disabled={content === "" || email === "" || name === "" || isPending}
+            >
+              {isPending && <Spinner className="me-2" variant="success" />}
+              invia
+            </button>
+          </div>
+        </Form>
       </Col>
       <Row className="text-center">
         <Col className="mb-4" xs={12} md={6} lg={4}>

@@ -107,9 +107,31 @@ body {
   }
   .cv-button {
     padding: 1rem 1.5rem;
+    border-radius: 15px;
     background-color: transparent;
     color: lime;
     box-shadow: 0px 0px 10px 2px lime;
+  }
+  .form-button {
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    background-color: transparent;
+    color: lime;
+    box-shadow: 0px 0px 10px 2px lime;
+  }
+  .form-button:hover {
+    transform: scale(1.1);
+  }
+  .transition-color {
+    transition: color 1.5s ease, box-shadow 1.5s ease, transform 0.3s ease;
+  }
+  .button-disabled {
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    background-color: transparent;
+    color: red;
+    box-shadow: 0px 0px 10px 2px red;
+    cursor: not-allowed;
   }
   .cv-button:hover {
     animation: cv-button-anim 0.5s linear infinite alternate;
