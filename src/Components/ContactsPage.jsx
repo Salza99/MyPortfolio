@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Card, Col, FloatingLabel, Form, Row, Spinner } from "react-bootstrap";
 import { Check2, EnvelopeAt, Github, Linkedin } from "react-bootstrap-icons";
 import emailjs from "emailjs-com";
+
 const ContactsPage = ({ setPage }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [tooltip, setTooltip] = useState(false);
@@ -22,7 +23,7 @@ const ContactsPage = ({ setPage }) => {
       message: content, // Il testo del messaggio
     };
 
-    emailjs.send("", "", templateParams, "").then(
+    emailjs.send("service_ggva0ng", "template_xlzy4mh", templateParams, "tcoLAcEPuSQiZ3so0").then(
       (response) => {
         setIsPending(false);
         alert("Email inviata con successo!");
