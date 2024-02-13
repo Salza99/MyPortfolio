@@ -15,6 +15,8 @@ const ProjectPage = ({ setPage, light, lang }) => {
       "Il sistema EPIC ENERGY SERVICE è il risultato di una collaborazione dinamica e sinergica, con il coinvolgimento dei miei stimati colleghi di corso.",
     textCloneDiLinkedinIT:
       "Il nostro progetto clone di LinkedIn, realizzato attraverso la potente combinazione di React, Redux e React Persist, è un trionfo di ingegnosità collaborativa che offre un'esperienza utente impeccabile nel panorama delle reti professionali.",
+    textWeatherAppIT:
+      "La mia Weather App è un progetto che ho sviluppato per applicare le mie competenze in Redux e Redux Persist nell'ambito dello sviluppo web. Utilizzando le moderne tecnologie web e le API di OpenWeather e Weatherbit, ho creato un'applicazione che fornisce agli utenti informazioni dettagliate sulle previsioni meteorologiche in tempo reale.",
     titoloCloneIT: "Clone di LinkedIn",
     titoloCloneEN: "LinkedIn Clone",
     textPropManageHubEN:
@@ -23,6 +25,8 @@ const ProjectPage = ({ setPage, light, lang }) => {
       "The EPIC ENERGY SERVICE system is the result of a dynamic and synergistic collaboration, with the involvement of my esteemed colleagues.",
     textCloneDiLinkedinEN:
       "Our LinkedIn clone project, built through the powerful combination of React, Redux and React Persist, is a triumph of collaborative ingenuity that delivers a flawless user experience across the professional network landscape.",
+    textWeatherAppEN:
+      "My Weather App is a project I developed to apply my skills in Redux and Redux Persist in web development. Using modern web technologies and the OpenWeather and Weatherbit APIs, I created an application that provides users with detailed information about real-time weather forecasts.",
     titoloEN: "Welcome to My Projects Gallery!",
     bottoneEN: "See on Github",
     textEN:
@@ -125,6 +129,29 @@ const ProjectPage = ({ setPage, light, lang }) => {
             <Card.Text>
               {lang === "IT" ? traductionObj.textCloneDiLinkedinIT : traductionObj.textCloneDiLinkedinEN}
             </Card.Text>
+            <a
+              style={{ textDecoration: "none" }}
+              href="https://github.com/alessandrofugazza/bw3"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="d-flex justify-content-center align-items-center border p-1">
+                <Card.Title style={{ fontSize: "1rem" }} className="m-0">
+                  {" "}
+                  <Github style={{ marginBottom: "1px" }} fontSize={"1rem"} />{" "}
+                  {lang === "IT" ? traductionObj.bottoneIT : traductionObj.bottoneEN}
+                </Card.Title>
+              </div>
+            </a>
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col className="mb-4" xs={12} lg={4}>
+        <Card className={light ? "card-overlay text-light" : "card-overlay"}>
+          <div className="img-background-weather img-position transition"></div>
+          <Card.Body className="position-absolute overlay-on-img transition ">
+            <Card.Title>Weather App</Card.Title>
+            <Card.Text>{lang === "IT" ? traductionObj.textWeatherAppIT : traductionObj.textWeatherAppEN}</Card.Text>
             <a
               style={{ textDecoration: "none" }}
               href="https://github.com/alessandrofugazza/bw3"

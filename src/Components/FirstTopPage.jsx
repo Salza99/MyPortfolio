@@ -9,7 +9,7 @@ const FirstTopPage = ({ setPage, light, lang }) => {
     titoloIT: "Full Stack Developer",
     sottotitoloIT: "Ciao! Sono Davide Salzani",
     textIT:
-      "Benvenuto nel mio mondo digitale! Sono un / con sede a Verona, appassionato di creare soluzioni web innovative. Nel mio portfolio, troverai una selezione di progetti significativi che illustrano la mia competenza. Dal design coinvolgente del frontend alla gestione efficiente di server e database sul backend, questi progetti sono un assaggio del mio impegno e della mia creatività!",
+      "Benvenuto nel mio mondo digitale! Sono un / con sede a Verona, con la passione per la creazione di soluzioni web innovative. Nel mio portfolio, troverai una selezione di progetti significativi che illustrano la mia competenza. Dal design coinvolgente del frontend alla gestione efficiente di server e database sul backend, questi progetti sono un assaggio del mio impegno e della mia creatività!",
     titoloEN: "Full Stack Developer",
     sottotitoloEN: "Hi! I'm Davide Salzani",
     textEN:
